@@ -2,12 +2,7 @@
 
 import { useEffect, useState } from "react";
 
-const themes = [
-  { id: "aurora", label: "Aurora" },
-  { id: "sunset", label: "Sunset" },
-  { id: "oasis", label: "Oasis" },
-  { id: "mono", label: "Mono" },
-];
+
 
 type Mode = "dark" | "light";
 
