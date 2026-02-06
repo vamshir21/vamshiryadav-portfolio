@@ -49,7 +49,7 @@ export default function ResumePage() {
       {/* Embedded Resume */}
       <div className="overflow-hidden rounded-[32px] border border-[var(--border)] bg-[var(--surface)]">
         <iframe
-          src="/resume/Vamshi_R_Yadav_Resume.pdf"
+          src="/resume/vamshir_resume1.pdf"
           className="h-[85vh] w-full"
         />
       </div>
