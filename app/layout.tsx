@@ -38,7 +38,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" data-mode="dark" data-theme="oasis">
+    <html lang="en" data-mode="dark" data-theme="aurora">
       <body
         className={`${geistSans.variable} ${geistMono.variable} min-h-screen bg-[var(--background)] text-[var(--text)] antialiased`}
       >
