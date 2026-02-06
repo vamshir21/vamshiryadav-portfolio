@@ -32,7 +32,7 @@ export default function ThemeToggle() {
         console.error(error);
       }
     }
-    document.documentElement.dataset.theme = "oasis";
+    document.documentElement.dataset.theme = "aurora";
     document.documentElement.dataset.mode = "dark";
   }, []);
 
