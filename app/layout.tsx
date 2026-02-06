@@ -55,9 +55,11 @@ export default function RootLayout({
               </Link>
 
              <a
-                href="mailto:vamshiryadav@gmail.com?subject=Let’s%20Talk%20—%20Portfolio%20Inquiry&body=Hi%20Vamshi,%0D%0A%0D%0AI%20visited%20your%20portfolio%20and%20would%20like%20to%20connect.%0D%0A%0D%0AThanks,"
-                className="rounded-full border border-[var(--accent)] bg-[var(--accent)] px-4 py-2 text-xs font-semibold uppercase tracking-wide text-[var(--accent-foreground)] shadow-lg shadow-[var(--glow)] transition-all duration-300 hover:-translate-y-0.5"
-             >
+                  href="https://mail.google.com/mail/?view=cm&fs=1&to=vamshiryadav@gmail.com&su=Let’s%20Talk%20—%20Portfolio%20Inquiry&body=Hi%20Vamshi,%0D%0A%0D%0AI%20came%20across%20your%20portfolio%20and%20would%20like%20to%20connect.%0D%0A%0D%0AThanks,%0D%0A"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                    className="rounded-full border border-[var(--accent)] bg-[var(--accent)] px-4 py-2 text-xs font-semibold uppercase tracking-wide text-[var(--accent-foreground)] shadow-lg shadow-[var(--glow)] transition-all duration-300 hover:-translate-y-0.5"
+            >
           Let&apos;s talk
           </a>
 
