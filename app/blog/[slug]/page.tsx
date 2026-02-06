@@ -2,6 +2,7 @@ export const runtime = "nodejs";
 
 import fs from "fs";
 import path from "path";
+import { notFound } from "next/navigation";
 
 const postsDirectory = path.join(process.cwd(), "content", "blog");
 
@@ -11,11 +12,18 @@ export default function BlogPost({
   params: { slug: string };
 }) {
   const fullPath = path.join(postsDirectory, `${params.slug}.md`);
-  const markdown = fs.readFileSync(fullPath, "utf8");
+
+  if (!fs.existsSync(fullPath)) {
+    notFound();
+  }
+
+  const content = fs.readFileSync(fullPath, "utf8");
 
   return (
-    <article className="prose prose-invert max-w-none">
-      <div dangerouslySetInnerHTML={{ __html: markdown }} />
-    </article>
+    <main className="mx-auto w-full max-w-6xl px-6 py-12">
+      <article className="prose prose-invert max-w-none">
+        <pre>{content}</pre>
+      </article>
+    </main>
   );
 }
