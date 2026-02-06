@@ -3,13 +3,13 @@
 import { useEffect, useState } from "react";
 
 type Mode = "dark" | "light";
-const storageKey = "portfolio-mode";
+const STORAGE_KEY = "portfolio-mode";
 
 export default function ThemeToggle() {
   const [mode, setMode] = useState<Mode>("dark");
 
   useEffect(() => {
-    const saved = localStorage.getItem(storageKey) as Mode | null;
+    const saved = localStorage.getItem(STORAGE_KEY) as Mode | null;
     const next = saved ?? "dark";
 
     setMode(next);
@@ -21,17 +21,20 @@ export default function ThemeToggle() {
     const next: Mode = mode === "dark" ? "light" : "dark";
     setMode(next);
     document.documentElement.dataset.mode = next;
-    localStorage.setItem(storageKey, next);
+    localStorage.setItem(STORAGE_KEY, next);
   };
 
   return (
     <button
       onClick={toggle}
-      aria-label="Toggle theme"
+      aria-label="Toggle dark mode"
       className="
-        fixed right-4 top-1/2 -translate-y-1/2 z-50
-        h-10 w-20 rounded-full border border-[var(--border)]
-        bg-[var(--surface)] p-1
+        fixed bottom-6 right-6 z-50
+        h-10 w-20 rounded-full
+        border border-[var(--border)]
+        bg-[var(--surface)]
+        p-1
+        shadow-lg backdrop-blur
         transition-all duration-300
         hover:border-[var(--accent)]
       "
@@ -39,8 +42,10 @@ export default function ThemeToggle() {
       <span
         className={`
           flex h-8 w-8 items-center justify-center rounded-full
-          bg-[var(--accent)] text-[var(--accent-foreground)]
-          shadow-lg transition-all duration-300
+          bg-[var(--accent)]
+          text-[var(--accent-foreground)]
+          shadow-md
+          transition-transform duration-300
           ${mode === "dark" ? "translate-x-0" : "translate-x-10"}
         `}
       >
