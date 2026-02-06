@@ -30,7 +30,7 @@ export default function ResumePage() {
 
           {/* Open in new tab */}
           <a
-            href="/resume/Vamshi_R_Yadav_Resume.pdf"
+            href="/resume/Vamshir_resume1.pdf"
             target="_blank"
             className="rounded-full border border-[var(--border)] px-6 py-3 text-xs font-semibold uppercase tracking-wide text-[var(--muted)] transition-all duration-300 hover:-translate-y-1 hover:border-[var(--accent)] hover:text-[var(--text)]"
           >
