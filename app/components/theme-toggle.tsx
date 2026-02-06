@@ -3,7 +3,6 @@
 import { useEffect, useState } from "react";
 
 type Mode = "dark" | "light";
-
 const storageKey = "portfolio-mode";
 
 export default function ThemeToggle() {
@@ -11,28 +10,42 @@ export default function ThemeToggle() {
 
   useEffect(() => {
     const saved = localStorage.getItem(storageKey) as Mode | null;
-    const nextMode = saved ?? "dark";
+    const next = saved ?? "dark";
 
-    setMode(nextMode);
+    setMode(next);
     document.documentElement.dataset.theme = "aurora";
-    document.documentElement.dataset.mode = nextMode;
+    document.documentElement.dataset.mode = next;
   }, []);
 
-  const toggleMode = () => {
-    const nextMode: Mode = mode === "dark" ? "light" : "dark";
-
-    setMode(nextMode);
-    document.documentElement.dataset.mode = nextMode;
-    localStorage.setItem(storageKey, nextMode);
+  const toggle = () => {
+    const next: Mode = mode === "dark" ? "light" : "dark";
+    setMode(next);
+    document.documentElement.dataset.mode = next;
+    localStorage.setItem(storageKey, next);
   };
 
   return (
     <button
-      type="button"
-      onClick={toggleMode}
-      className="rounded-full border border-[var(--border)] bg-[var(--surface)] px-3 py-1 text-xs font-semibold uppercase tracking-wide text-[var(--muted)] transition-all duration-300 hover:-translate-y-0.5 hover:border-[var(--accent)] hover:text-[var(--text)]"
+      onClick={toggle}
+      aria-label="Toggle theme"
+      className="
+        fixed right-4 top-1/2 -translate-y-1/2 z-50
+        h-10 w-20 rounded-full border border-[var(--border)]
+        bg-[var(--surface)] p-1
+        transition-all duration-300
+        hover:border-[var(--accent)]
+      "
     >
-      {mode === "dark" ? "Light mode" : "Dark mode"}
+      <span
+        className={`
+          flex h-8 w-8 items-center justify-center rounded-full
+          bg-[var(--accent)] text-[var(--accent-foreground)]
+          shadow-lg transition-all duration-300
+          ${mode === "dark" ? "translate-x-0" : "translate-x-10"}
+        `}
+      >
+        {mode === "dark" ? "🌙" : "☀️"}
+      </span>
     </button>
   );
 }
