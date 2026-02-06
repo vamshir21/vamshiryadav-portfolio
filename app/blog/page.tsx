@@ -9,11 +9,7 @@ export default function BlogIndex() {
             From a Tier-3 College to Real-World AI Engineering
           </a>
         </li>
-        <li>
-          <a href="/blog/student-ai-projects-fail">
-            Why Most Student AI Projects Fail
-          </a>
-        </li>
+       
         <li>
           <a href="/blog/backend-for-aiml">
             Learning Backend Engineering as an AIML Student
