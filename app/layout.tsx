@@ -54,12 +54,13 @@ export default function RootLayout({
                 Vamshi R Yadav
               </Link>
 
-              <Link
-                href="#contact"
+             <a
+                href="mailto:vamshiryadav@gmail.com?subject=Let’s%20Talk%20—%20Portfolio%20Inquiry&body=Hi%20Vamshi,%0D%0A%0D%0AI%20visited%20your%20portfolio%20and%20would%20like%20to%20connect.%0D%0A%0D%0AThanks,"
                 className="rounded-full border border-[var(--accent)] bg-[var(--accent)] px-4 py-2 text-xs font-semibold uppercase tracking-wide text-[var(--accent-foreground)] shadow-lg shadow-[var(--glow)] transition-all duration-300 hover:-translate-y-0.5"
-              >
-                Let&apos;s talk
-              </Link>
+             >
+          Let&apos;s talk
+          </a>
+
             </div>
 
             {/* Right */}
